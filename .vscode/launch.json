@@ -1,0 +1,18 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            // "console": "integratedTerminal",
+            "console": "internalConsole", //this line will not execute code if you want user to pass some data from their side. ex input("xxxx")
+            "cwd": "${fileDirname}",
+            // "stopOnEntry": true //this will ask to play(click on play button like intact debugger) our code on very first line of program
+        }
+    ]
+}
