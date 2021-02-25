@@ -6,57 +6,54 @@ import random
 
 # importing path
 from pathlib import Path
-# # /////////////////////////////////////// DICTIONARY----------------- key value pair data---------------OBJECT------------------------
-# student = {
-#     "name": "nimit",
-#     "age": 26,
-#     "isLegal": True
-# }
-# print(student)
-# # how to print some specific value
-# print(student["age"])
-# print(student.get("namee"))  # will print none instead of giving error
-# print(student.get("isMarried", "false"))  # we can put default value too
 
-# ----------------------------------FUNCTIONS---------------------------
-# def greeting(firstName, lastName):
-#     print(f'Hello {firstName} {lastName}😊')
+import keyword
+import termcolor
 
+print(termcolor.colored('Hello Nimit!', "yellow"))
+# print(help(termcolor))
 
-# greeting("Nimit", "Chavda")
-# # we can change the args order with defining args and passing the name
-# greeting(lastName="Chavda", firstName="Nimit")
-
-
-# def cube(param):
-#     return param*param*param
-
-
-# print(cube(5))
-
-# # we can return mutiple elemtns from fucntion too
-# def name(ff, dd):
-#     return ff, dd
-
-
-# # this will be tuple. below
-# print(name(12, 33))
+print(keyword.iskeyword('def'))
+print(keyword.iskeyword('falseee'))
 
 # # ---------------------------------EXCEPTIONS-----------------------------------------------
-# try:
-#     age = int(input("enter the age"))
-#     print(f'you are {age} year old!')
-#     print(23/age)
-# except ValueError:
-#     print("please don't add string!")
-# # except ZeroDivisionError:
-#     # print("age can't be zero")
-# # this below will be used for unknown error. like a default for all error. try commenting zerodiv exception and tthen divide by zero. will print err message too
-# except:
-#     print(f'unknown err " + {sys.exc_info()[1]}')
-# else:
-#     print("all good!")
 
+
+def testErr(age):
+    try:
+        # age = int(input("enter the age"))
+        # print(f'you are {age} year old!')
+        print(23/int(age))
+    except ValueError:
+        print("please don't add string!")
+    # except ZeroDivisionError:
+        # print("age can't be zero")
+    # #--------------combining upper 2 execption at a same time
+    # except (ZeroDivisionError, ValueError) as err:
+    #     print('something went wrong!')
+    #     print(err)
+    # this below will be used for unknown error. like a default for all error. try commenting zerodiv exception and tthen divide by zero. will print err message too
+    except:
+        print(f'unknown err {sys.exc_info()[1]}')
+    # else will run only when any exception blocks are not run
+    else:
+        print("all good!")
+    finally:
+        print('I will run all the time!')
+
+
+testErr('fff')
+# #----------------------------CUSTOM ERRORS--------------------------
+# def colorize(text,color):
+#     colorList = ['red','green','purple']
+#     if color not in colorList:
+#         raise ValueError('color is not in the list!')
+#     if type(text) is not str:
+#         raise TypeError('type has to be string!')
+#     else:
+#         print(f'color changed in {color}')
+
+# colorize('hola Nimit','red')
 # # -------------------------------------------------CLASS----------------------------------------------
 # class Point:
 #     # how to write constructor
@@ -118,7 +115,22 @@ from pathlib import Path
 # abs path
 
 # relative path
-path = Path("xx")
-print(path.mkdir())  # will create xx dir if not exist
-print(path.rmdir())  # will delete the dir
-# path.rename("xxx")
+# path = Path("xx")
+# print(path.mkdir())  # will create xx dir if not exist
+# print(path.rmdir())  # will delete the dir
+# # path.rename("xxx")
+
+print('------------------------------------------')
+name = {
+    "namee": "nimit",
+    "age": 26
+}
+
+name2 = {
+    "ismarried": False,
+    "hasjob": True
+}
+
+news = {** name, ** name2}
+
+print(news)

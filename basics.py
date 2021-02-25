@@ -1,7 +1,12 @@
 import math
+import random
+
 # type conversion int(), float(), str() etc
-# ss = input("number please! ")
-# print(int(ss) - 2)
+# age = int(input('ENter the age'))
+# print(f'you were born in {2020 - age}')
+# print(int('22') -2)
+# ll=[1,2,3]
+# print(str(ll))
 
 # printing type of any var
 # print(type(5555.555))
@@ -32,12 +37,14 @@ import math
 # # string.includes() equivalent
 # print('Nimit' in name)
 
+# name='nimit chavda dineshkumar'
+# print(name.split(' '))
+
 # --------------NONE-----------------
 # None in python is almost equivalent to "null"
-child = None  # if you want to define something with nothing until you get some value later in your prog then "None" can be used
-print(child)
-print(type(child))  # will print NoneType
-
+# child = None  # if you want to define something with nothing until you get some value later in your prog then "None" can be used
+# print(child)
+# print(type(child))  # will print NoneType
 
 # -------------------------------------------------------------------------------------------------------------------------
 # print(round(33.3333))
@@ -80,50 +87,19 @@ print(type(child))  # will print NoneType
 #     j = j+i
 #     print(j)
 
+# for i in range(7,0,-1): #will print from 7 to 1 while decreasing everything by 1
+#     print(i)
+
 # nested loops
 # for i in range(4):
 #     for j in range(3):
 #         print(f'i = {i} & j = {j}')
 
-# ///////////////////////////////////////////////-ARRAY////////////////////////////////////////////// we call it "LIST" here🤣
-# no = [1, 2, 3, 4, 5]
-# # [from:to] this sytanx will work here tooo
-# print(no[0:3])
-# print(no[2:])  # this will print everyting from 2nd index
-
-# 2d arrays  matrix
-# matrix = [
-#     [1, 2, 3],
-#     [4, 5, 6]
-# ]
-
-# # prinintg 2d array
-# for row in matrix:
-#     for item in row:
-#         print(item)
-
-# no = [1, 2, 3, 4, 5]
-# no.append(8)
-# no.remove(5)
-# print(no)
-
-# # we can use in operator in array too
-# print(4 in no)  # will return true
-# no2 = no
-# no.insert(2, 22)
-# print(no2)
-
-# # how to remove duplicate items from arr
-# org = [1, 22, 22, 33, 444, 444, 33, 6, 8, 9]
-# dup = []
-# for i in org:
-#     if(i not in dup):
-#         dup.append(i)
-# print(dup)
 
 # ---------------------------------------------------------------------TUPLES-----------------------------------------------
 # #  we can't modify the tuple like array. no instert, removal can be done. we can only get information about elements
 # # its just ------------------------------------IMMUTABLE------------------------------------
+#  tupes can't be nested
 # tup = (1, 2, 3)
 # print(type(tup))
 # print(tup[1])
@@ -134,3 +110,32 @@ print(type(child))  # will print NoneType
 # arr = [1, 2, 3]
 # a, b, c = arr
 # print(a, b, c)
+
+# #  we can use tuple in dictionary as key too
+# office = {
+#     (222,3423.4): 'vadodara',
+#     (22223,423.5): 'toronto'
+# }
+# print(office)
+
+# ----------------------------------------------------------------SETS-----------------------------------
+#  init of set
+set1 = {1, 2, 3, 4}
+# method 2
+set2 = set({6.7, 8, 9})
+print(f'{set1} and {set2}')
+# method 3
+set3 = set([1, 2, 4, 4, 1, 3])
+print(set3)
+# we can use "IN" function here too
+print(2 in set1)
+# we can iterate through sets just like normal iterating through list
+
+#  set methods
+set1.add('vv')
+print(set1)
+set1.remove('vv')
+print(set1)
+# for removing any elemtns. same like remove. but it wont throw an error in case you pass something in args that is not in the list
+set1.discard(4)
+print(set1)
